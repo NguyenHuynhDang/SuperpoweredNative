@@ -15,15 +15,11 @@ class Karaoke
 {
 private:
     SuperpoweredAndroidAudioIO *audioIO;
-    Superpowered::AdvancedAudioPlayer *player;
-    Superpowered::Recorder *recorder;
 
 public:
-    Karaoke(unsigned int samplerate, unsigned int bufferSize, int destinationfd);
+    Karaoke(unsigned int samplerate, unsigned int bufferSize);
     ~Karaoke();
-    void openFile(std::string path, int offset, int length);
     bool process(short int* output, unsigned int numFrames, unsigned int samplerate);
-    void playBack();
     void stopRecord();
     void clean();
 };
