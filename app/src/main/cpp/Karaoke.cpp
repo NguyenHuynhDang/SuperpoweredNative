@@ -21,16 +21,11 @@ Karaoke::Karaoke(unsigned int samplerate, unsigned int bufferSize)
 
     audioIO = new SuperpoweredAndroidAudioIO(samplerate, bufferSize, true, true, audioProcessing,
                                              this);
-    audioIO->start();
 }
 
 
 bool Karaoke::process(short int *audio, unsigned int numFrames, unsigned int sampleRate)
 {
-//    float outputBuffer[numFrames * 2];
-//
-//    Superpowered::ShortIntToFloat(audio, outputBuffer, (unsigned int)numFrames);
-
     return true;
 }
 
@@ -41,6 +36,5 @@ void Karaoke::clean()
 
 void Karaoke::stopRecord()
 {
-    audioIO->stop();
     clean();
 }
